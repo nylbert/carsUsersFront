@@ -49,4 +49,15 @@ export class ListUserComponent implements OnInit {
       }
     });
   }
+
+  deleteUser(user: User) {
+    this.userService.deleteUser(user.id).subscribe({
+      next: (response) => {
+        console.log(response);
+        this.fetchUsers();
+      }, error: (error) => {
+        console.log(error);
+      }
+    })
+  }
 }

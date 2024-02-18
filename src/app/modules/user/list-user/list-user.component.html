@@ -7,9 +7,11 @@
         <p>Birthday: {{ user.birthday }}</p>
         <p>Login: {{ user.login }}</p>
         <p>Phone: {{ user.phone }}</p>
+        <br>
         <div style="display: grid;">
-          <a [routerLink]="['/findUser', user.id]">Ver detalhes do usuário</a>
-          <a [routerLink]="['/updateUser', user.id]">Editar usuário</a>
+          <button [routerLink]="['/findUser', user.id]">Detalhar</button>
+          <button [routerLink]="['/updateUser', user.id]">Editar</button>
+          <button (click)="deleteUser(user)">Excluir</button>
         </div>
         <h3>Cars:</h3>
         <ul>
