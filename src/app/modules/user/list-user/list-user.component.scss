@@ -1,0 +1,28 @@
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100vw;
+    padding: 60px;
+}
+
+.p-body {
+    height: 350px;
+    width: 335px;
+    padding: 30px;
+    flex: 0 0 100%; /* Faz com que cada item ocupe toda a largura da linha */
+    max-width: 100%; /* Garante que os itens não ultrapassem a largura da tela */
+    box-sizing: border-box; /* Considera a largura total, incluindo padding e borda */
+}
+
+.p-card {
+    background: #ffffff;
+    color: #495057;
+    box-shadow: 0 2px 1px -1px rgba(0, 0, 0, 0.2), 0 1px 1px 0 rgba(0, 0, 0, 0.14), 0 1px 3px 0 rgba(0, 0, 0, 0.12);
+    border-radius: 6px;
+    margin-right: 10px;
+    margin-top: 10px;
+}
+
+h1 {
+    padding: 60px;
+}
