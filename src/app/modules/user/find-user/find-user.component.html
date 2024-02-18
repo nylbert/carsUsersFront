@@ -1,5 +1,5 @@
-  <div class="container">
-    <div class="p-card" *ngFor="let user of users">
+<div class="container">
+    <div class="p-card">
       <div class="p-body">
         <h2>{{ user.firstName }} {{ user.lastName }}</h2>
         <p>ID: {{ user.id }}</p>
@@ -7,7 +7,6 @@
         <p>Birthday: {{ user.birthday }}</p>
         <p>Login: {{ user.login }}</p>
         <p>Phone: {{ user.phone }}</p>
-        <a [routerLink]="['/findUser', user.id]">Ver detalhes do usuário</a>
         <h3>Cars:</h3>
         <ul>
           <li *ngFor="let car of user.cars">

@@ -19,4 +19,16 @@ export class UserService {
   createUser(user: User) : Observable<any> {
     return this.httpClient.post(this.url, user);
   }
+
+  findUser(id: number) : Observable<any> {
+    return this.httpClient.get(`${this.url}/${id}`, {});
+  }
+
+  updateUser(id: number, user: User) : Observable<any> {
+    return this.httpClient.put(`${this.url}/${id}`, user);
+  }
+
+  deleteUser(id: number) : Observable<any> {
+    return this.httpClient.delete(`${this.url}/${id}`, {});
+  }
 }

@@ -28,18 +28,6 @@ export class AppComponent {
                   },
                   {
                       separator: true
-                  },
-                  {
-                      label: 'Listar por ID',
-                      icon: 'pi pi-fw pi-external-link'
-                  },
-                  {
-                      label: 'Atualizar por ID',
-                      icon: 'pi pi-fw pi-external-link'
-                  },
-                  {
-                      label: 'Deletar por ID',
-                      icon: 'pi pi-fw pi-trash'
                   }
               ]
           },
@@ -54,21 +42,6 @@ export class AppComponent {
                 {
                     label: 'Criar',
                     icon: 'pi pi-fw pi-trash'
-                },
-                {
-                    separator: true
-                },
-                {
-                    label: 'Listar por ID',
-                    icon: 'pi pi-fw pi-external-link'
-                },
-                {
-                    label: 'Atualizar por ID',
-                    icon: 'pi pi-fw pi-external-link'
-                },
-                {
-                    label: 'Deletar por ID',
-                    icon: 'pi pi-fw pi-external-link'
                 }
             ]
         },

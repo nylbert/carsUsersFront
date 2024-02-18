@@ -11,6 +11,8 @@ import { MessagesModule } from 'primeng/messages';
 import { TableModule } from 'primeng/table';
 import { DialogModule } from 'primeng/dialog';
 import { PipesModule } from 'src/app/pipes/pipe.module';
+import { FindUserComponent } from './find-user/find-user.component';
+import { RouterModule } from '@angular/router';
 
 registerLocaleData(localePtBr);
 
@@ -18,8 +20,10 @@ registerLocaleData(localePtBr);
   declarations: [
     ListUserComponent,
     CreateUserComponent,
+    FindUserComponent,
   ],
   imports: [
+    RouterModule,
     PipesModule,
     FormsModule,
     ButtonModule,
