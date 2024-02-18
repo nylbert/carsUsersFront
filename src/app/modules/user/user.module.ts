@@ -13,6 +13,7 @@ import { DialogModule } from 'primeng/dialog';
 import { PipesModule } from 'src/app/pipes/pipe.module';
 import { FindUserComponent } from './find-user/find-user.component';
 import { RouterModule } from '@angular/router';
+import { UpdateUserComponent } from './update-user/update-user.component';
 
 registerLocaleData(localePtBr);
 
@@ -21,6 +22,7 @@ registerLocaleData(localePtBr);
     ListUserComponent,
     CreateUserComponent,
     FindUserComponent,
+    UpdateUserComponent,
   ],
   imports: [
     RouterModule,

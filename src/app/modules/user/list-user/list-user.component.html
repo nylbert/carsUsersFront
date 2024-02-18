@@ -7,7 +7,10 @@
         <p>Birthday: {{ user.birthday }}</p>
         <p>Login: {{ user.login }}</p>
         <p>Phone: {{ user.phone }}</p>
-        <a [routerLink]="['/findUser', user.id]">Ver detalhes do usuário</a>
+        <div style="display: grid;">
+          <a [routerLink]="['/findUser', user.id]">Ver detalhes do usuário</a>
+          <a [routerLink]="['/updateUser', user.id]">Editar usuário</a>
+        </div>
         <h3>Cars:</h3>
         <ul>
           <li *ngFor="let car of user.cars">
