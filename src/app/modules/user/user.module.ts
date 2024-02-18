@@ -1,18 +1,32 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { CommonModule, DatePipe } from '@angular/common';
 import { ListUserComponent } from './list-user/list-user.component';
-import { DateFormatPipe } from 'src/app/pipes/date-format.pipe';
 import { registerLocaleData } from '@angular/common';
 import localePtBr from '@angular/common/locales/pt';
+import { CreateUserComponent } from './create-user/create-user.component';
+import { FormsModule } from '@angular/forms';
+import { ButtonModule } from 'primeng/button';
+import { InputTextModule } from 'primeng/inputtext';
+import { MessagesModule } from 'primeng/messages';
+import { TableModule } from 'primeng/table';
+import { DialogModule } from 'primeng/dialog';
+import { PipesModule } from 'src/app/pipes/pipe.module';
 
 registerLocaleData(localePtBr);
 
 @NgModule({
   declarations: [
-    DateFormatPipe,
     ListUserComponent,
+    CreateUserComponent,
   ],
   imports: [
+    PipesModule,
+    FormsModule,
+    ButtonModule,
+    InputTextModule,
+    MessagesModule,
+    TableModule,
+    DialogModule,
     CommonModule
   ]
 })

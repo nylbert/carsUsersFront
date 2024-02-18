@@ -18,12 +18,13 @@ export class AppComponent {
               items: [
                   {
                       label: 'Listar',
-                      icon: 'pi pi-fw pi-plus',
+                      icon: 'pi pi-fw pi-external-link',
                       url: 'listUsers'
                   },
                   {
                       label: 'Criar',
-                      icon: 'pi pi-fw pi-trash'
+                      icon: 'pi pi-fw pi-plus',
+                      url: 'createUser'
                   },
                   {
                       separator: true
@@ -38,7 +39,7 @@ export class AppComponent {
                   },
                   {
                       label: 'Deletar por ID',
-                      icon: 'pi pi-fw pi-external-link'
+                      icon: 'pi pi-fw pi-trash'
                   }
               ]
           },

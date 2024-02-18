@@ -2,8 +2,9 @@
     <div class="p-card" *ngFor="let user of users">
       <div class="p-body">
         <h2>{{ user.firstName }} {{ user.lastName }}</h2>
+        <p>ID: {{ user.id }}</p>
         <p>Email: {{ user.email }}</p>
-        <p>Birthday: {{ user.birthday | dateFormat }}</p>
+        <p>Birthday: {{ user.birthday }}</p>
         <p>Login: {{ user.login }}</p>
         <p>Phone: {{ user.phone }}</p>
         <h3>Cars:</h3>
