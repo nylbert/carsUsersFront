@@ -11,6 +11,7 @@ import { MenubarModule } from 'primeng/menubar';
 import { SigninModule } from './modules/signin/signin.module';
 import { CarModule } from './modules/car/car.module';
 import { AuthInterceptor } from './interceptor/auth-interceptor';
+import { AccountModule } from './modules/account/account.module';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { AuthInterceptor } from './interceptor/auth-interceptor';
     MenubarModule,
     UserModule,
     SigninModule,
-    CarModule
+    CarModule,
+    AccountModule
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true }

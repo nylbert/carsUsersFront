@@ -10,6 +10,7 @@ import { SigninComponent } from './modules/signin/signin.component';
 import { ListCarComponent } from './modules/car/list-car/list-car.component';
 import { CreateCarComponent } from './modules/car/create-car/create-car.component';
 import { UpdateCarComponent } from './modules/car/update-car/update-car.component';
+import { DetailUserComponent } from './modules/account/detail-user/detail-user.component';
 
 const routes: Routes = [
   {
@@ -55,6 +56,11 @@ const routes: Routes = [
   {
     path: 'updateCar/:id',
     component: UpdateCarComponent,
+    canActivate: [AuthGuardService]
+  },
+  {
+    path: 'detailUser',
+    component: DetailUserComponent,
     canActivate: [AuthGuardService]
   }
 ];

@@ -53,7 +53,8 @@ export class AppComponent {
             items: [
                 {
                     label: 'Consultar usuario logado',
-                    icon: 'pi pi-fw pi-plus'
+                    icon: 'pi pi-fw pi-plus',
+                    url: 'detailUser'
                 }
             ]
         },
