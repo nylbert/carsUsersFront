@@ -1,3 +1,4 @@
+import { FindCarComponent } from './modules/car/find-car/find-car.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { ListUserComponent } from './modules/user/list-user/list-user.component';
@@ -7,6 +8,8 @@ import { UpdateUserComponent } from './modules/user/update-user/update-user.comp
 import { AuthGuardService } from './guard/auth-guard.service';
 import { SigninComponent } from './modules/signin/signin.component';
 import { ListCarComponent } from './modules/car/list-car/list-car.component';
+import { CreateCarComponent } from './modules/car/create-car/create-car.component';
+import { UpdateCarComponent } from './modules/car/update-car/update-car.component';
 
 const routes: Routes = [
   {
@@ -35,23 +38,23 @@ const routes: Routes = [
     component: SigninComponent
   },
   {
-    path: 'listCar',
+    path: 'listCars',
     component: ListCarComponent,
     canActivate: [AuthGuardService]
   },
   {
     path: 'createCar',
-    component: CreateUserComponent,
+    component: CreateCarComponent,
     canActivate: [AuthGuardService]
   },
   {
     path: 'findCar/:id',
-    component: CreateUserComponent,
+    component: FindCarComponent,
     canActivate: [AuthGuardService]
   },
   {
     path: 'updateCar/:id',
-    component: CreateUserComponent,
+    component: UpdateCarComponent,
     canActivate: [AuthGuardService]
   }
 ];

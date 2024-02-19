@@ -1,1 +1,25 @@
-<p>create-car works!</p>
+<p-messages [(value)]="messages" [enableService]="false" [closable]="false"></p-messages>
+
+<form (ngSubmit)="onSubmit()">
+  <div>
+    <div class="flex flex-column gap-2 top-2">
+        <label for="model">Modelo</label>
+        <input class="flex flex-column gap-2" id="model" type="text" pInputText [(ngModel)]="car.model" name="model" required>
+      </div>
+    <div class="flex flex-column gap-2">
+        <label for="year">Ano</label>
+        <input id="year" type="text" pInputText [(ngModel)]="car.year" name="year" required>
+      </div>
+    <div class="flex flex-column gap-2">
+        <label for="licenseplate">Placa</label>
+        <input id="licenseplate" type="licenseplate" pInputText [(ngModel)]="car.licensePlate" name="licenseplate" required>
+      </div>
+    <div class="flex flex-column gap-2">
+        <label for="color">Cor</label>
+        <input id="color" type="text" pInputText [(ngModel)]="car.color" name="color" required>
+    </div>
+      <button type="submit" pButton label="Submit"></button>
+    </div>
+
+</form>
+  

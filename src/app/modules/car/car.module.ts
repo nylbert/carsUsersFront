@@ -21,11 +21,11 @@ import { UpdateCarComponent } from './update-car/update-car.component';
     UpdateCarComponent
   ],
   imports: [
+    MessagesModule,
     RouterModule,
     FormsModule,
     ButtonModule,
     InputTextModule,
-    MessagesModule,
     TableModule,
     DialogModule,
     CommonModule

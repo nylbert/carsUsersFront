@@ -39,6 +39,6 @@ export class CarService {
   }
 
   buildHeaders() : HttpHeaders {
-    return new HttpHeaders().set('Authorization', `Bearer ${this.authService.getAuthToken}`);
+    return new HttpHeaders().set('Authorization', `Bearer ${this.authService.getAuthToken()}`);
   }
 }
