@@ -8,6 +8,7 @@ import { FormsModule } from '@angular/forms';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { UserModule } from './modules/user/user.module';
 import { MenubarModule } from 'primeng/menubar';
+import { SigninModule } from './modules/signin/signin.module';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { MenubarModule } from 'primeng/menubar';
     FormsModule,
     FontAwesomeModule,
     MenubarModule,
-    UserModule
+    UserModule,
+    SigninModule
   ],
   providers: [],
   bootstrap: [AppComponent]

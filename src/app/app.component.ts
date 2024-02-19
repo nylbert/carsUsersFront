@@ -37,11 +37,13 @@ export class AppComponent {
             items: [
                 {
                     label: 'Listar',
-                    icon: 'pi pi-fw pi-plus'
+                    icon: 'pi pi-fw external-link',
+                    url: 'listCars'
                 },
                 {
                     label: 'Criar',
-                    icon: 'pi pi-fw pi-trash'
+                    icon: 'pi pi-fw pi-plus',
+                    url: 'createCar'
                 }
             ]
         },
