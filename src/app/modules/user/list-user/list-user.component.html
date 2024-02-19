@@ -1,0 +1,27 @@
+  <div class="container">
+    <div class="p-card" *ngFor="let user of users">
+      <div class="p-body">
+        <h2>{{ user.firstName }} {{ user.lastName }}</h2>
+        <p>ID: {{ user.id }}</p>
+        <p>Email: {{ user.email }}</p>
+        <p>Birthday: {{ user.birthday }}</p>
+        <p>Login: {{ user.login }}</p>
+        <p>Phone: {{ user.phone }}</p>
+        <br>
+        <div style="display: grid;">
+          <button [routerLink]="['/findUser', user.id]">Detalhar</button>
+          <button [routerLink]="['/updateUser', user.id]">Editar</button>
+          <button (click)="deleteUser(user)">Excluir</button>
+        </div>
+        <h3>Cars:</h3>
+        <ul>
+          <li *ngFor="let car of user.cars">
+            {{ car.year }} {{ car.model }} - {{ car.color }}
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  
+ 
+  

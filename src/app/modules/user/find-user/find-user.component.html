@@ -1,0 +1,21 @@
+<div class="container">
+    <div class="p-card">
+      <div class="p-body">
+        <h2>{{ user.firstName }} {{ user.lastName }}</h2>
+        <p>ID: {{ user.id }}</p>
+        <p>Email: {{ user.email }}</p>
+        <p>Birthday: {{ user.birthday }}</p>
+        <p>Login: {{ user.login }}</p>
+        <p>Phone: {{ user.phone }}</p>
+        <h3>Cars:</h3>
+        <ul>
+          <li *ngFor="let car of user.cars">
+            {{ car.year }} {{ car.model }} - {{ car.color }}
+          </li>
+        </ul>
+      </div>
+    </div>
+</div>
+  
+ 
+  
