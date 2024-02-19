@@ -6,6 +6,7 @@ import { FindUserComponent } from './modules/user/find-user/find-user.component'
 import { UpdateUserComponent } from './modules/user/update-user/update-user.component';
 import { AuthGuardService } from './guard/auth-guard.service';
 import { SigninComponent } from './modules/signin/signin.component';
+import { ListCarComponent } from './modules/car/list-car/list-car.component';
 
 const routes: Routes = [
   {
@@ -34,7 +35,22 @@ const routes: Routes = [
     component: SigninComponent
   },
   {
+    path: 'listCar',
+    component: ListCarComponent,
+    canActivate: [AuthGuardService]
+  },
+  {
     path: 'createCar',
+    component: CreateUserComponent,
+    canActivate: [AuthGuardService]
+  },
+  {
+    path: 'findCar/:id',
+    component: CreateUserComponent,
+    canActivate: [AuthGuardService]
+  },
+  {
+    path: 'updateCar/:id',
     component: CreateUserComponent,
     canActivate: [AuthGuardService]
   }
