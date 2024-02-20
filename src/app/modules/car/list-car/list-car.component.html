@@ -1,0 +1,21 @@
+<div class="container">
+    <div class="p-card" *ngFor="let car of cars">
+      <div class="p-body">
+        <h2>{{ car.model }}</h2>
+        <p>ID: {{ car.id }}</p>
+        <p>Modelo: {{ car.model }}</p>
+        <p>Ano: {{ car.year }}</p>
+        <p>Placa: {{ car.licensePlate }}</p>
+        <p>Cor: {{ car.color }}</p>
+        <br>
+        <div style="display: grid;">
+          <button [routerLink]="['/findCar', car.id]">Detalhar</button>
+          <button [routerLink]="['/updateCar', car.id]">Editar</button>
+          <button (click)="deleteCar(car)">Excluir</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+ 
+  

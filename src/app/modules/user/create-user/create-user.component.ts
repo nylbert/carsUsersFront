@@ -46,4 +46,9 @@ export class CreateUserComponent implements OnChanges{
       }
     });
   }
+
+  deleteCar(car: Car) {
+    let index = this.user.cars.indexOf(car);
+    this.user.cars.splice(index, 1);
+  }
 }

@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { HttpClientModule } from '@angular/common/http'
+import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http'
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { FormsModule } from '@angular/forms';
@@ -9,6 +9,9 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { UserModule } from './modules/user/user.module';
 import { MenubarModule } from 'primeng/menubar';
 import { SigninModule } from './modules/signin/signin.module';
+import { CarModule } from './modules/car/car.module';
+import { AuthInterceptor } from './interceptor/auth-interceptor';
+import { AccountModule } from './modules/account/account.module';
 
 @NgModule({
   declarations: [
@@ -23,9 +26,13 @@ import { SigninModule } from './modules/signin/signin.module';
     FontAwesomeModule,
     MenubarModule,
     UserModule,
-    SigninModule
+    SigninModule,
+    CarModule,
+    AccountModule
   ],
-  providers: [],
+  providers: [
+    { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

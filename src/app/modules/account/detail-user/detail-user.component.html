@@ -1,0 +1,53 @@
+  <div>
+    <div class="flex flex-column gap-2 top-2">
+        <label for="firstName">Primeiro Nome</label>
+        <input class="flex flex-column gap-2" id="firstName" type="text" pInputText value="{{ userDetails.firstName }}" name="firstName" disabled>
+      </div>
+    <div class="flex flex-column gap-2">
+        <label for="lastName">Ultimo Nome</label>
+        <input id="lastName" type="text" pInputText value="{{ userDetails.lastName }}" name="lastName" disabled>
+      </div>
+    <div class="flex flex-column gap-2">
+        <label for="email">Email</label>
+        <input id="email" type="email" pInputText value="{{ userDetails.email }}" name="email" disabled>
+      </div>
+    <div class="flex flex-column gap-2">
+        <label for="birthday">Data de Nascimento</label>
+        <input id="birthday" placeholder="dd/mm/yyyy" pInputText value="{{ userDetails.birthday }}" name="birthday" disabled>
+      </div>
+    <div class="flex flex-column gap-2">
+        <label for="login">Login</label>
+        <input id="login" type="text" pInputText value="{{ userDetails.login }}" name="login" disabled>
+      </div>
+    <div class="flex flex-column gap-2">
+        <label for="phone">Celular</label>
+        <input id="phone" type="text" pInputText value="{{ userDetails.phone }}" name="phone" disabled>
+      </div>
+      <div class="flex flex-column gap-2">
+        <label for="createdAt">Criado em</label>
+        <input id="createdAt" placeholder="dd/mm/yyyy" pInputText value="{{ userDetails.createdAt }}" name="createdAt" disabled>
+      </div>
+      <div class="flex flex-column gap-2">
+        <label for="lastLogin">Ultimo login</label>
+        <input id="lastLogin" placeholder="dd/mm/yyyy" pInputText value="{{ userDetails.lastLogin }}" name="lastLogin" disabled>
+      </div>
+    </div>
+
+<p-table *ngIf="userDetails.cars.length > 0" [value]="userDetails.cars" [tableStyle]="{ 'min-width': '50rem' }">
+    <ng-template pTemplate="header">
+        <tr>
+            <th>Ano</th>
+            <th>Placa</th>
+            <th>Modelo</th>
+            <th>Cor</th>
+        </tr>
+    </ng-template>
+    <ng-template pTemplate="body" let-car>
+        <tr>
+            <td>{{ car.year }}</td>
+            <td>{{ car.licensePlate }}</td>
+            <td>{{ car.model }}</td>
+            <td>{{ car.color }}</td>
+        </tr>
+    </ng-template>
+</p-table>
