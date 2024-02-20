@@ -9,7 +9,7 @@ import { AuthService } from './auth.service';
 })
 export class CarService {
 
-  private url: string = 'http://localhost:8080/api/cars';
+  private url: string = 'https://user-car-api-2197b529f599.herokuapp.com/api/cars';
 
   constructor(private httpClient : HttpClient, private authService: AuthService) {}
 

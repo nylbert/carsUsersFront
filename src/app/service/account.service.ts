@@ -8,7 +8,7 @@ import { AuthService } from './auth.service';
 })
 export class AccountService {
 
-  private url: string = 'http://localhost:8080/api/me';
+  private url: string = 'https://user-car-api-2197b529f599.herokuapp.com/api/me';
 
   constructor(private httpClient : HttpClient, private authService: AuthService) {}
 

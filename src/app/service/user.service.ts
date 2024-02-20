@@ -8,7 +8,7 @@ import { Observable } from 'rxjs';
 })
 export class UserService {
 
-  private url: string = 'http://localhost:8080/api/users';
+  private url: string = 'https://user-car-api-2197b529f599.herokuapp.com/api/users';
 
   constructor(private httpClient : HttpClient) {}
 
