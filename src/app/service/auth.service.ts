@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
+import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root'
@@ -8,11 +9,12 @@ import { Observable } from 'rxjs';
 export class AuthService {
 
   private tokenKey = 'auth_token';
+  private apiUrl = environment.apiUrl;
 
   constructor(private httpClient: HttpClient) {}
 
   login(username?: string, password?: string): Observable<any> {
-    return this.httpClient.post<any>('https://user-car-api-2197b529f599.herokuapp.com/api/signin', { login: username, password });
+    return this.httpClient.post<any>(`${this.apiUrl}/signin`, { login: username, password });
   }
 
   setAuthToken(token: string): void {
