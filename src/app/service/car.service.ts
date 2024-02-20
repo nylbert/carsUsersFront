@@ -3,39 +3,40 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Car } from '../models/car.model';
 import { AuthService } from './auth.service';
+import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class CarService {
 
-  private url: string = 'https://user-car-api-2197b529f599.herokuapp.com/api/cars';
+  private apiUrl = environment.apiUrl;
 
   constructor(private httpClient : HttpClient, private authService: AuthService) {}
 
   listCars() : Observable<any> {
     let headers = this.buildHeaders();
-    return this.httpClient.get(this.url, { headers });
+    return this.httpClient.get(`${this.apiUrl}/cars`, { headers });
   }
 
   createCar(car: Car) : Observable<any> {
     let headers = this.buildHeaders();
-    return this.httpClient.post(this.url, car, { headers });
+    return this.httpClient.post(`${this.apiUrl}/cars`, car, { headers });
   }
 
   findCar(id: number) : Observable<any> {
     let headers = this.buildHeaders();
-    return this.httpClient.get(`${this.url}/${id}`, { headers });
+    return this.httpClient.get(`${`${this.apiUrl}/cars`}/${id}`, { headers });
   }
 
   updateCar(id: number, car: Car) : Observable<any> {
     let headers = this.buildHeaders();
-    return this.httpClient.put(`${this.url}/${id}`, car, { headers });
+    return this.httpClient.put(`${`${this.apiUrl}/cars`}/${id}`, car, { headers });
   }
 
   deleteCar(id?: number) : Observable<any> {
     let headers = this.buildHeaders();
-    return this.httpClient.delete(`${this.url}/${id}`, { headers });
+    return this.httpClient.delete(`${`${this.apiUrl}/cars`}/${id}`, { headers });
   }
 
   buildHeaders() : HttpHeaders {

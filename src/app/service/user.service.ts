@@ -2,33 +2,34 @@ import { User } from 'src/app/models/user.model';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
+import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class UserService {
 
-  private url: string = 'https://user-car-api-2197b529f599.herokuapp.com/api/users';
+  private apiUrl = environment.apiUrl;
 
   constructor(private httpClient : HttpClient) {}
 
   listUsers() : Observable<any> {
-    return this.httpClient.get(this.url, {});
+    return this.httpClient.get(`${this.apiUrl}/users`, {});
   }
 
   createUser(user: User) : Observable<any> {
-    return this.httpClient.post(this.url, user);
+    return this.httpClient.post(`${this.apiUrl}/users`, user);
   }
 
   findUser(id: number) : Observable<any> {
-    return this.httpClient.get(`${this.url}/${id}`, {});
+    return this.httpClient.get(`${`${this.apiUrl}/users`}/${id}`, {});
   }
 
   updateUser(id: number, user: User) : Observable<any> {
-    return this.httpClient.put(`${this.url}/${id}`, user);
+    return this.httpClient.put(`${`${this.apiUrl}/users`}/${id}`, user);
   }
 
   deleteUser(id?: number) : Observable<any> {
-    return this.httpClient.delete(`${this.url}/${id}`, {});
+    return this.httpClient.delete(`${`${this.apiUrl}/users`}/${id}`, {});
   }
 }
