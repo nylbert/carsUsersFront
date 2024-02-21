@@ -10,4 +10,5 @@ export interface User {
     password?: string;
     phone?: string;
     cars: Car[];
+    image?: File;
 }

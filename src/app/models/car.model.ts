@@ -4,4 +4,5 @@ export interface Car {
     licensePlate?: string;
     model?: string;
     color?: string;
+    image?: File;
 }

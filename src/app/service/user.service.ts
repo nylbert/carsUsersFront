@@ -32,4 +32,11 @@ export class UserService {
   deleteUser(id?: number) : Observable<any> {
     return this.httpClient.delete(`${`${this.apiUrl}/users`}/${id}`, {});
   }
+
+  uploadUserImage(id: number, imageFile: File) {
+    const formData = new FormData();
+    formData.append('image', imageFile);
+
+    return this.httpClient.put(`${this.apiUrl}/users/${id}/image`, formData);
+  }
 }
