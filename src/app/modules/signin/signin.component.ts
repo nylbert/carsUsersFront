@@ -20,7 +20,7 @@ export class SigninComponent {
       next: (response) => {
         console.log(response);
         this.authService.setAuthToken(response.token);
-        this.router.navigate(['']);
+        this.router.navigate(['/listCars']);
       }, error: (error) => {
         console.log('Login error: ', error);
         this.messages = [{ severity: 'error', summary: 'Error', detail: error.error.message }];

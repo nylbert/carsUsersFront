@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { DomSanitizer } from '@angular/platform-browser';
 import { Car } from 'src/app/models/car.model';
 import { CarService } from 'src/app/service/car.service';
 
@@ -28,7 +29,7 @@ export class ListCarComponent implements OnInit {
     }
   ]
 
-  constructor(private carService: CarService) { }
+  constructor(private carService: CarService, private sanitizer: DomSanitizer) { }
 
   ngOnInit(): void {
     this.fetchCars();
@@ -55,5 +56,25 @@ export class ListCarComponent implements OnInit {
         console.log(error);
       }
     })
+  }
+
+  onFileSelected(event: any, car: Car): void {
+    car.image = event.target.files[0];
+  }
+
+  onUpload(car: Car): void {
+    if (car.id && car.image) {
+      this.carService.uploadCarImage(car.id, car.image).subscribe({
+        next: (response) => {
+          console.log('Upload successful', response);
+          this.fetchCars();
+        },
+        error: (error) => console.error('Upload failed', error)
+      });
+    }
+  }
+
+  sanitizeImageUrl(byteArray: any) {
+    return this.sanitizer.bypassSecurityTrustResourceUrl('data:image/jpeg;base64,' + byteArray);
   }
 }

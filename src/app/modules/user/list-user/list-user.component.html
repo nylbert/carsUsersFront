@@ -1,6 +1,7 @@
   <div class="container">
     <div class="p-card" *ngFor="let user of users">
       <div class="p-body">
+        <img *ngIf="user.image" [src]="sanitizeImageUrl(user.image)" />
         <h2>{{ user.firstName }} {{ user.lastName }}</h2>
         <p>ID: {{ user.id }}</p>
         <p>Email: {{ user.email }}</p>
@@ -12,6 +13,10 @@
           <button [routerLink]="['/findUser', user.id]">Detalhar</button>
           <button [routerLink]="['/updateUser', user.id]">Editar</button>
           <button (click)="deleteUser(user)">Excluir</button>
+          <div>
+            <input type="file" (change)="onFileSelected($event, user)">
+            <button (click)="onUpload(user)">Upload</button>
+          </div>
         </div>
         <h3>Carros:</h3>
         <ul>

@@ -20,26 +20,34 @@ export class CarService {
   }
 
   createCar(car: Car) : Observable<any> {
-    let headers = this.buildHeaders();
+    const headers = this.buildHeaders();
     return this.httpClient.post(`${this.apiUrl}/cars`, car, { headers });
   }
 
   findCar(id: number) : Observable<any> {
-    let headers = this.buildHeaders();
+    const headers = this.buildHeaders();
     return this.httpClient.get(`${`${this.apiUrl}/cars`}/${id}`, { headers });
   }
 
   updateCar(id: number, car: Car) : Observable<any> {
-    let headers = this.buildHeaders();
+    const headers = this.buildHeaders();
     return this.httpClient.put(`${`${this.apiUrl}/cars`}/${id}`, car, { headers });
   }
 
   deleteCar(id?: number) : Observable<any> {
-    let headers = this.buildHeaders();
+    const headers = this.buildHeaders();
     return this.httpClient.delete(`${`${this.apiUrl}/cars`}/${id}`, { headers });
   }
 
   buildHeaders() : HttpHeaders {
     return new HttpHeaders().set('Authorization', `Bearer ${this.authService.getAuthToken()}`);
+  }
+
+  uploadCarImage(id: number, imageFile: File) {
+    const headers = this.buildHeaders();
+    const formData = new FormData();
+    formData.append('image', imageFile);
+
+    return this.httpClient.put(`${this.apiUrl}/cars/${id}/image`, formData, { headers });
   }
 }

@@ -206,8 +206,7 @@ body {
 }
 
 .p-body {
-    height: 350px;
-    width: 335px;
+    width: fit-content;
     padding: 30px;
     flex: 0 0 100%; /* Faz com que cada item ocupe toda a largura da linha */
     max-width: 100%; /* Garante que os itens não ultrapassem a largura da tela */
